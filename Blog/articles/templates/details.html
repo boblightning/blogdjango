@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Article Details
+{% endblock title %}
+
+{% block style %}
+
+
+
+{% endblock style %}
+
+{% block body %}
+
+<div class='container mt-4'></div>
+    <h1>{{article.title}}</h1>
+    <h6>Published {{article.published}} by <i>{{article.author}}</i></h6>
+    <br>
+    <p>{{article.description}}</p>
+{% endblock body %}
