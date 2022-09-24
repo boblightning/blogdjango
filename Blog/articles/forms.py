@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from .models import Article
 
 class LoginForm(forms.Form):
     username = forms.CharField()
@@ -19,3 +20,15 @@ class UserRegistration(forms.ModelForm):
             raise forms.ValidationError('Password dont match')
 
         return cd['password2']
+
+
+class ArticleRegistrationForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        fields = ('title', 'description')
+
+
+class ArticleUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        fields = ('title', 'description')
